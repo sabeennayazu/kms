@@ -1,11 +1,11 @@
 "use client";
+
 import { Icon } from "@iconify/react";
+import Navbar from "./components/navbar";
 import {
-  BookOpen,
+  BookOpenCheck,
   Calendar,
   Users,
-  BookOpenCheck,
-  LibraryBig,
   Bell,
 } from "lucide-react";
 import {
@@ -17,7 +17,6 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import Layout from "./components/layout";
 
 export default function Page() {
   const studentsData = [
@@ -40,25 +39,9 @@ export default function Page() {
   ];
 
   return (
-    <div className="bg-blue-50 min-h-screen">
-
-    <Layout>
+    <div className="bg-blue-50 min-h-screen p-6">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">Hii, John</h1>
-        <div className="flex gap-3 items-center">
-          <input
-            type="text"
-            placeholder="Search"
-            className="border rounded-lg px-3 py-1 text-sm"
-          />
-          <button className="bg-blue-600 text-white px-4 py-1 rounded-lg">
-            Create +
-          </button>
-          <Bell size={20} className="text-gray-600 m-4" />
-          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
-        </div>
-      </div>
+      <Navbar />  
 
       {/* Stats cards */}
       <div className="grid grid-cols-4 gap-4 mb-6">
@@ -71,7 +54,7 @@ export default function Page() {
         </div>
         <div className="bg-pink-100 p-4 rounded-md shadow-md flex flex-col gap-1 hover:shadow-2xl transition-shadow">
           <p className="font-medium flex items-center gap-2">
-            <Icon icon="wpf:books" width="26" height="26" /> Courses
+            <Icon icon="wpf:books" width="22" height="22" /> Courses
           </p>
           <h2 className="text-2xl font-bold">12</h2>
           <span className="text-sm text-gray-500">Added this year</span>
@@ -133,8 +116,8 @@ export default function Page() {
           <ul className="space-y-2">
             {["UI/UX Courses", "Marketing", "Data Science"].map((course) => (
               <li
-              key={course}
-              className="flex justify-between items-center border-b pb-1"
+                key={course}
+                className="flex justify-between items-center border-b pb-1"
               >
                 <span>{course}</span>
                 <button className="bg-green-100 text-green-700 px-2 py-1 text-sm rounded">
@@ -173,7 +156,6 @@ export default function Page() {
           </ul>
         </div>
       </div>
-    </Layout>
-            </div>
+    </div>
   );
 }
