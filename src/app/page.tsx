@@ -6,6 +6,7 @@ import {
   BookOpenCheck,
   Calendar,
   Users,
+  User,
   Bell,
 } from "lucide-react";
 import {
@@ -40,7 +41,7 @@ export default function Page() {
 
   return (
     <div className="bg-blue-50 min-h-screen p-6">
-      {/* Header */}
+    
       <Navbar />  
 
       {/* Stats cards */}
@@ -133,8 +134,10 @@ export default function Page() {
           <h3 className="font-medium mb-3">Top Instructors</h3>
           <ul className="space-y-2">
             {["Thomas", "Catherine", "Smith"].map((name) => (
+            
               <li key={name} className="flex justify-between">
-                <span>{name}</span>
+               <User size={20} />
+                <span className="">{name}</span>
                 <span className="text-yellow-500">★ 4.5</span>
               </li>
             ))}
